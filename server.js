@@ -13,8 +13,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname));
 
 /* ---------------- HOME ROUTE (FIX) ---------------- */
+app.use(express.static(__dirname));
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "staff.html"));
+  res.sendFile(path.join(__dirname, "staffLogin.html"));
 });
 
 /* ---------------- DATA FILES ---------------- */
