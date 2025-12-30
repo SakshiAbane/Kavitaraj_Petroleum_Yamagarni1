@@ -1,0 +1,315 @@
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* ================= FORM PAGE ================= */
+body.form-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1e3a8a, #0f172a);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 50px 15px;
+}
+
+/* ================= CARD ================= */
+.card {
+  background: #ffffff;
+  width: 100%;
+  max-width: 420px;
+  padding: 28px;
+  border-radius: 14px;
+  box-shadow: 0 20px 45px rgba(0,0,0,0.35);
+}
+
+/* ================= HEADING ================= */
+.card h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #0f172a;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+/* ================= FORM ================= */
+.form-column {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-column label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #334155;
+}
+
+.form-column input,
+.form-column select {
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1.5px solid #cbd5e1;
+  outline: none;
+}
+
+.form-column input:focus,
+.form-column select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37,99,235,0.2);
+}
+
+/* ================= BUTTONS ================= */
+.form-column button {
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.form-column button[type="submit"] {
+  background: #2563eb;
+  color: #fff;
+}
+
+.form-column button[type="submit"]:hover {
+  background: #1e40af;
+}
+
+.admin-btn {
+  background: #111827;
+  color: #fff;
+}
+
+.admin-btn:hover {
+  background: #020617;
+}
+
+/* ================= MODAL ================= */
+.repeat-dialog {
+  border: none;
+  border-radius: 14px;
+  padding: 22px;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0 20px 45px rgba(0,0,0,0.35);
+}
+
+.repeat-dialog::backdrop {
+  background: rgba(0,0,0,0.6);
+}
+
+
+/* ================= TABLE (GLOBAL) ================= */
+.record-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.record-table th {
+  background: #1e3a8a;
+  color: #ffffff;
+  padding: 10px;
+  border: 1px solid #334155;
+}
+
+.record-table td {
+  padding: 9px;
+  border: 1px solid #cbd5e1;
+  text-align: center;
+  color: #0f172a;
+}
+
+.record-table tbody tr:nth-child(even) {
+  background: #f1f5f9;
+}
+
+.record-table tbody tr:hover {
+  background: #e0e7ff;
+}
+
+/* ================= CLOSE BUTTON ================= */
+.close-btn {
+  margin: 15px auto 0;
+  display: block;
+  background: #dc2626;
+  color: #fff;
+  padding: 8px 24px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.close-btn:hover {
+  background: #991b1b;
+}
+
+/* ================= LOGIN PAGE ================= */
+body.login-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #020617, #1e293b);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-card {
+  background: #ffffff;
+  padding: 30px;
+  width: 320px;
+  border-radius: 14px;
+  box-shadow: 0 20px 45px rgba(0,0,0,0.45);
+  text-align: center;
+}
+
+.login-card h2 {
+  margin-bottom: 18px;
+  color: #020617;
+}
+
+.login-group {
+  text-align: left;
+  margin-bottom: 14px;
+}
+
+.login-group label {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.login-card input {
+  width: 100%;
+  padding: 9px;
+  border-radius: 6px;
+  border: 1.5px solid #cbd5e1;
+}
+
+.login-card button {
+  width: 100%;
+  padding: 10px;
+  background: #2563eb;
+  color: #fff;
+  border-radius: 6px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.login-card button:hover {
+  background: #1e40af;
+}
+
+/* ================= ADMIN PANEL ================= */
+body.admin-page {
+  background: #0f172a;
+  padding: 30px 15px;
+}
+
+.admin-card {
+  background: #ffffff;
+  max-width: 1150px;
+  margin: auto;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 25px 55px rgba(0,0,0,0.4);
+}
+
+.admin-card h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #020617;
+}
+
+.admin-actions {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.admin-actions input {
+  flex: 1;
+  padding: 9px;
+  border-radius: 6px;
+  border: 1.5px solid #cbd5e1;
+}
+
+.admin-actions button {
+  padding: 9px 14px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  background: #2563eb;
+  color: #fff;
+}
+
+.admin-actions button:hover {
+  background: #1e40af;
+}
+
+/* ================= ADMIN TABLE ================= */
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.admin-page table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.admin-page th {
+  background: #1e3a8a;
+  color: #fff;
+  padding: 11px;
+  border: 1px solid #334155;
+}
+
+.admin-page td {
+  padding: 10px;
+  border: 1px solid #cbd5e1;
+}
+
+.admin-page tr:nth-child(even) {
+  background: #f8fafc;
+}
+
+/* ================= ACTION BUTTONS ================= */
+td button {
+  padding: 5px 8px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.edit-btn {
+  background: #fbbf24;
+}
+
+.delete-btn {
+  background: #ef4444;
+  color: #fff;
+}
+
+.edit-btn:hover,
+.delete-btn:hover {
+  opacity: 0.85;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .admin-actions {
+    flex-direction: column;
+  }
+}

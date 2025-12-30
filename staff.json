@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "name": "Ananda Kokane",
+    "username": "Ananda Kokane",
+    "password": "7528",
+    "active": true
+  },
+  {
+    "id": 2,
+    "name": "Hari Patil",
+    "username": "Hari Patil",
+    "password": "2718",
+    "active": true
+  },
+  {
+    "id": 3,
+    "name": "Sandip More",
+    "username": "Sandip More",
+    "password": "3373",
+    "active": true
+  },
+  {
+    "id": 4,
+    "name": "Kavitaraj",
+    "username": "Kavitaraj",
+    "password": "8362",
+    "active": true
+  }
+]

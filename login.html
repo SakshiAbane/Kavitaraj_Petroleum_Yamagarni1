@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Login - Kavitaraj Petroleum</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Basic login styling */
+    body.login-page {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #0b2a4a;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+    .login-card {
+      background: white;
+      color: black;
+      padding: 30px;
+      border-radius: 10px;
+      width: 300px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    }
+    .login-card h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .login-group {
+      margin-bottom: 15px;
+    }
+    .login-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    .login-group input {
+      width: 100%;
+      padding: 8px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    .login-card button {
+      width: 100%;
+      padding: 10px;
+      background: #0b2a4a;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .login-card button:hover {
+      background: #07203b;
+    }
+  </style>
+</head>
+<body class="login-page">
+
+  <div class="login-card">
+    <h2>Admin Login</h2>
+
+    <div class="login-group">
+      <label for="username">Username</label>
+      <input type="text" id="username" placeholder="Enter Username">
+    </div>
+
+    <div class="login-group">
+      <label for="password">Password</label>
+      <input type="password" id="password" placeholder="Enter Password">
+    </div>
+
+    <button onclick="loginAdmin()">Login</button>
+  </div>
+
+  <script src="login.js"></script>
+</body>
+</html>

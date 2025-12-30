@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Kavitaraj Petroleum - Fuel Entry</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* ===== WELCOME SCREEN ===== */
+    #welcomeScreen {
+      position: fixed;
+      inset: 0;
+      background: #0b2a4a;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.2rem;
+      font-weight: bold;
+      z-index: 9999;
+      animation: fadeOut 1s ease forwards;
+      animation-delay: 1.2s;
+    }
+
+    @keyframes fadeOut {
+      to {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 10000;
+    }
+
+    .modal-content {
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 8px;
+      max-width: 95%;
+      width: 700px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      font-size: 0.9rem;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 6px;
+      text-align: center;
+    }
+
+    th {
+      background: #0b2a4a;
+      color: white;
+    }
+
+    .modal-content table {
+      max-height: 400px;
+      overflow-y: auto;
+      display: block;
+    }
+
+    .form-column {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-column label {
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    .form-column input,
+    .form-column select,
+    .form-column button {
+      margin-bottom: 15px;
+      padding: 8px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .form-column button {
+      background: #007BFF;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    .form-column button:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+
+<body class="form-page" onload="checkStaffLogin()">
+
+<div id="welcomeScreen">WELCOME TO KAVITARAJ PETROLEUM</div>
+
+<div class="card">
+  <h2>Fuel Entry Form</h2>
+
+  <form id="fuelForm" class="form-column">
+    <label>Vehicle Number</label>
+    <input id="vehicleNo" type="text" required>
+
+    <label>Driver Name</label>
+    <input id="driverName" type="text">
+
+    <label>Driver Contact</label>
+    <input id="driverContact" type="tel">
+
+    <label>Fuel Type</label>
+    <select id="fuelType">
+      <option value="Petrol">Petrol</option>
+      <option value="Diesel">Diesel</option>
+    </select>
+
+    <!-- ✅ FIX -->
+    <label>Litres</label>
+    <input id="litres" type="number" required>
+
+    <!-- ✅ FIX -->
+    <label>Gift/Discount</label>
+    <input id="giftDiscount" type="text">
+
+    <!-- ✅ FIX -->
+    <label>Amount given in cash</label>
+    <input id="amountCash" type="text">
+
+    <label>Staff Name</label>
+    <select id="staffName" disabled>
+      <option id="staffOption"></option>
+    </select>
+
+    <button type="submit">Submit</button>
+
+    <button type="button" onclick="window.location.href='login.html'">
+      Admin Login
+    </button>
+  </form>
+</div>
+
+<div class="modal" id="repeatModal">
+  <div class="modal-content">
+    <h3>⚠️ Repeated Vehicle Found</h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>Date</th>
+          <th>Fuel</th>
+          <th>Litres</th>
+          <th>Gift/Discount</th>
+          <th>Amount give in Cash</th>
+          <th>Staff Name</th>
+        </tr>
+      </thead>
+      <tbody id="prevTableBody"></tbody>
+    </table>
+
+    <button id="closeModalBtn">Close</button>
+  </div>
+</div>
+
+<script src="staffLogin.js"></script>
+<script>
+  const staffNameSelect = document.getElementById("staffOption");
+  const staffName = getStaffName();
+  if (staffName) staffNameSelect.textContent = staffName;
+</script>
+
+<script src="form.js"></script>
+</body>
+</html>
