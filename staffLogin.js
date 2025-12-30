@@ -1,4 +1,12 @@
-const STAFF_API = "http://localhost:3000"; // rename from API
+fetch("/staff-login", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify(data)
+});
+
+
 
 function getStaffName() {
   const staff = JSON.parse(localStorage.getItem("staffUser"));

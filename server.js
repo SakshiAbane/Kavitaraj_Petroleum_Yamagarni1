@@ -14,7 +14,8 @@ app.use(express.static(__dirname));
 
 /* ---------------- HOME ROUTE (FIX) ---------------- */
 app.use(express.static(__dirname));
-app.get("/", (req, res) => {
+app.post("/staff-login", (req, res) =>
+ {
   res.sendFile(path.join(__dirname, "staffLogin.html"));
 });
 
