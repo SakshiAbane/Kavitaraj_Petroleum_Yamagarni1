@@ -3,7 +3,7 @@
 // ===============================
 
 function getStaffName() {
-  const staff = JSON.parse(localStorage.getItem("staffUser"));
+  const staff = staff.JSON(localStorage.getItem("staffUser"));
   return staff ? staff.name : "";
 }
 
