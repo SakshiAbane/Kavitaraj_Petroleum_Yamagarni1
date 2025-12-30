@@ -4,13 +4,18 @@ const fs = require("fs");
 const path = require("path");
 
 const app = express();
-const PORT = 3000; // ✅ FIXED PORT
+const PORT = process.env.PORT || 3000; // ✅ FIXED FOR RENDER
 
 /* ---------------- MIDDLEWARE ---------------- */
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname));
+
+/* ---------------- HOME ROUTE (FIX) ---------------- */
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "staff.html"));
+});
 
 /* ---------------- DATA FILES ---------------- */
 const DATA_FILE = path.join(__dirname, "data.json");
@@ -111,7 +116,6 @@ app.put("/staff-deactivate/:id", (req, res) => {
   res.json({ success: true });
 });
 
-// DELETE STAFF (after deactivate)
 app.delete("/staff-delete/:id", (req, res) => {
   const id = Number(req.params.id);
 
@@ -145,7 +149,7 @@ app.post("/add-fuel", (req, res) => {
 /* ---------------- GET DATA ---------------- */
 app.get("/fuel-data", (req, res) => res.json(fuelRecords));
 
-/* ---------------- UPDATE (INDEX BASED) ---------------- */
+/* ---------------- UPDATE ---------------- */
 app.put("/update/:index", (req, res) => {
   const index = Number(req.params.index);
 
@@ -162,7 +166,7 @@ app.put("/update/:index", (req, res) => {
   res.json({ success: true });
 });
 
-/* ---------------- DELETE (INDEX BASED) ---------------- */
+/* ---------------- DELETE ---------------- */
 app.delete("/delete/:index", (req, res) => {
   const index = Number(req.params.index);
 
@@ -177,5 +181,5 @@ app.delete("/delete/:index", (req, res) => {
 
 /* ---------------- START SERVER ---------------- */
 app.listen(PORT, () => {
-  console.log(`✅ Server running at http://localhost:${PORT}`);
+  console.log(`✅ Server running on port ${PORT}`);
 });
