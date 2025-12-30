@@ -1,12 +1,6 @@
-fetch("/staff-login", {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json"
-  },
-  body: JSON.stringify(data)
-});
-
-
+// ===============================
+// Staff Login JavaScript
+// ===============================
 
 function getStaffName() {
   const staff = JSON.parse(localStorage.getItem("staffUser"));
@@ -29,6 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
+
     const username = document.getElementById("username").value.trim();
     const password = document.getElementById("password").value.trim();
 
@@ -38,7 +33,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     try {
-      const res = await fetch(`${STAFF_API}/staff-login`, {
+      // ✅ ONLY FIX: localhost / STAFF_API काढून direct route
+      const res = await fetch("/staff-login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, password })
@@ -55,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     } catch (err) {
       console.error(err);
-      loginError.textContent = "network error";
+      loginError.textContent = "Network error";
     }
   });
 });
